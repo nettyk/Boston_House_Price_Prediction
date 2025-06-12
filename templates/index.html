@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Boston House Price Predictor</title>
+    <style>
+        body {
+            background-color: #92d2e2;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 40px;
+            text-align: center;
+        }
+        form {
+            background-color: #fff;
+            padding: 30px;
+            display: inline-block;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        input {
+            margin: 10px;
+            padding: 10px;
+            width: 90%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #0077cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        h1 {
+            color: #333;
+        }
+        .prediction {
+            margin-top: 20px;
+            font-size: 18px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Boston House Price Predictor</h1>
+    <form action="/predict" method="post">
+        <input type="text" name="crim" placeholder="crim (Crime Rate)" required><br>
+        <input type="text" name="zn" placeholder="zn (Residential Land Zoned %)" required><br>
+        <input type="text" name="indus" placeholder="indus (Business Acres)" required><br>
+        <input type="text" name="chas" placeholder="chas (Charles River 0 or 1)" required><br>
+        <input type="text" name="nox" placeholder="nox (NO Concentration)" required><br>
+        <input type="text" name="rm" placeholder="rm (Average Rooms)" required><br>
+        <input type="text" name="age" placeholder="age (Old Buildings %)" required><br>
+        <input type="text" name="dis" placeholder="dis (Distance to Employment)" required><br>
+        <input type="text" name="rad" placeholder="rad (Highway Access Index)" required><br>
+        <input type="text" name="tax" placeholder="tax (Property Tax)" required><br>
+        <input type="text" name="ptratio" placeholder="ptratio (Pupil-Teacher Ratio)" required><br>
+        <input type="text" name="b" placeholder="b (1000(Bk - 0.63)^2)" required><br>
+        <input type="text" name="lstat" placeholder="lstat (Lower Status %)" required><br>
+        <button type="submit">Predict</button>
+    </form>
+
+    <div class="prediction">
+        {{ prediction_text }}
+    </div>
+</body>
+</html>
